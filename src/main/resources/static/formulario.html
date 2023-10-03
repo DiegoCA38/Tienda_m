@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- PAra comentar -->
+<html>
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8">
+     <link href="css/estilos.css" rel="stylesheet" type="text/css"/>    
+    </head>
+    <body>
+        <header class="header">
+            <nav class="nav">
+         <a class="logo nav-link" href="index.html">TechShop</a>
+         <ul class="nav-menu">
+             <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo4.html">&triangleleft;</a></li>
+        <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="ejemplo2.html">&triangleright;</a></li>
+         <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="audio.html">Audios</a></li>
+          <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="video.html">Videos</a></li>
+           <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="iframe.html">iFrame</a></li>
+           <li class="nav-menu-item"><a class="nav-link nav-menu-link" href="formulario.html">Formulario</a></li>
+        </ul>
+            </nav>
+        </header>
+        
+        
+        <aside>
+            <h2 class="aviso">Ultimas Noticias</h2>
+        <p>Segun el informe de ventas el producto mas vendido es el xt-2500, muchas gracias por sus compras</p>
+        </aside>
+        
+        <section>
+            <h2>Registro de Usuario</h2>
+            <form action="/usuario/registro"
+                  method="post">
+                <table border="0">
+                   
+                    <tbody>
+                        <tr>
+                            <td>Usuario</td>
+                            <td><input type="email" 
+                                       placeholder="correo@correo.com"
+                                       name="usuario" value="" size="25" /></td>
+                        </tr>
+                        <tr>
+                            <td>Nombre</td>
+                            <td><input type="text" 
+                                       required
+                                       name="nombre" value="" size="45" /></td>
+                        </tr>
+                        <tr>
+                            <td>Clave</td>
+                            <td><input type="password" 
+                                       required
+                                       name="clave" value="" size="10" /></td>
+                        </tr>
+                        <tr>
+                            <td>Edad</td>
+                            <td><input type="number" 
+                                       min="18"
+                                       max="25"
+                                       name="edad" value="" /></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" value="Registro" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+                
+            </form>
+        </section>
+        
+        <footer>
+            Derechos Reservados TechShop 2023 
+        </footer>
+       
+    </body>
+</html>
