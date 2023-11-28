@@ -41,4 +41,11 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
+     public List<Producto> consultaQuery(double precioInf,double precioSup) {
+     return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+     }
+     //consulta JPQL
+      public List<Producto> consultaJPQL(double precioInf,double precioSup) {
+     return productoDao.consultaJPQL(precioInf, precioSup);
+     }
 }

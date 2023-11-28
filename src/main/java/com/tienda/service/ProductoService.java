@@ -16,4 +16,11 @@ public interface ProductoService {
     
     //Se genera un método para obtener un ArrayList de Productos
     public List<Producto> getProductos(boolean activos);
+    
+    public List<Producto> consultaQuery(double precioInf,double precioSup);
+    
+    // Ejemplo de una consulta con un JPQL
+    public List<Producto> consultaJPQL(double precioInf,double precioSup);
+    
+    
 }
