@@ -33,7 +33,7 @@
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado}">[[#{plantilla.asociaciones}]]</a></li>
                                     <li><a class="dropdown-item"  th:href="@{/pruebas/listado2}">[[#{plantilla.consultas}]]</a></li>
-                                 <li <a class="dropdown-item" th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
+                                    <li><a class="dropdown-item" th:href="@{/usuario/listado}">[[#{plantilla.usuarios}]]</a></li>
                                 </ul>
                             </li>
                            
@@ -83,5 +83,15 @@
             </section>
         </header>
        
+        <footer th:fragment="footer" class="bg-info text-white mt-5 p-2">
+            <div class="container">
+                <div class="col">
+                    <p class="lead text-center">
+                        &COPY; [[#{plantilla.derechos}]]
+                    </p>
+                </div>
+            </div>
+        </footer>
+        
     </body>
 </html>
