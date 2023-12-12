@@ -73,7 +73,9 @@
                     <h5>[[#{reporte.ventas.totales}]]</h5>                  
                 </div>
                 <div class="card-body">
-                    <div class="row">
+                    <form method="get"
+                          th:action="@{/reportes/ventasTotales}"
+                          class="was-calidated">
                         <div class="mb-3">
 
                             <label for="fechaIni"> Fecha Inicial</label>
@@ -82,46 +84,54 @@
                                    th:value="${fechaIni}"
                                    required="true"/>
                         </div>
+                        <div class="mb-3">
+                            <label for="fechaFin"> Fecha Final</label>
+                            <input type="date" class="form-control"
+                                   name="fechaFin"
+                                   th:value="${fechaFin}"
+                                   required="true"/>
+                        </div> 
+                        <button name="tipo"
+                                value="vPdf"
+                                type="submit"
+                                class="btn btn-primary">
+                            <i class="fas fa-eye"></i>
+                            <i class="fas fa-file-pdf"></i>
+                        </button>
+                        
+                        <button name="tipo"
+                                value="Pdf"
+                                type="submit"
+                                class="btn btn-success">
+                            <i class="fas fa-download"></i>
+                            <i class="fas fa-file-pdf"></i>
+                        </button>
+                        
+                        <button name="tipo"
+                                value="Xls"
+                                type="submit"
+                                class="btn btn-warning">
+                            <i class="fas fa-download"></i>
+                            <i class="fas fa-file-excel"></i>
+                        </button>
+                        
+                        <button name="tipo"
+                                value="Csv"
+                                type="submit"
+                                class="btn btn-danger">
+                            <i class="fas fa-download"></i>
+                            <i class="fas fa-file-Csv"></i>
+                        </button>
+                        
+                    </form>
+                           
                     </div>
-
-                    <div class="mb-3">
-
-                        <label for="fechaFin"> Fecha Final</label>
-                        <input type="date" class="form-control"
-                               name="fechaFin"
-                               th:value="${fechaFin}"
-                               required="true"/>
-                    </div>               
-                </div>
-                <div class="card-body">
-                    <a th:href="@{/reportes/ventas.totales?tipo=vPdf}"
-                       class="btn btn-primary">
-                        <i class="fas fa-eye"></i>
-                        <i class="fas fa-file-pdf"></i>
-                    </a>
-                    <a th:href="@{/reportes/ventas.totales?tipo=Pdf}"
-                       class="btn btn-success">
-                        <i class="fas fa-download"></i>
-                        <i class="fas fa-file-pdf"></i>
-                    </a>
-                    <a th:href="@{/reportes/ventas.totales?tipo=Xls}"
-                       class="btn btn-warning">
-                        <i class="fas fa-download"></i>
-                        <i class="fas fa-file-excel"></i>
-                    </a>
-
-                    <a th:href="@{/reportes/ventas.totales?tipo=Csv}"
-                       class="btn btn-danger">
-                        <i class="fas fa-download"></i>
-                        <i class="fas fa-file-csv"></i>
-                    </a>
                 </div>
             </div>
-        </div>
 
 
 
-        <footer th:replace="~{layout/plantilla :: footer}"></footer>
+            <footer th:replace="~{layout/plantilla :: footer}"></footer>
 
     </body>
 </html>

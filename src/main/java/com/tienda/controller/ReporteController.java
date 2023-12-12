@@ -21,10 +21,12 @@ public class ReporteController {
     @Autowired
     private ReporteService reporteService;
     
+    
+    // 2022-01-01
     @GetMapping("/principal")
     public String listado(Model model) {
       Calendar fecha=Calendar.getInstance();
-      String fechaIni = ""+(fecha.get(Calendar.YEAR)-1)+"01-01";
+      String fechaIni = " "+(fecha.get(Calendar.YEAR)-1)+" -01-01";
       
       String strMes=(fecha.get(Calendar.MONTH)<10?"0":"")+fecha.get(Calendar.MONTH);
       
@@ -52,13 +54,13 @@ public class ReporteController {
     
     @GetMapping("/ventasTotales")
     public ResponseEntity<Resource> reporteVentasTotales(
-            @RequestParam String fechaInicio,
+            @RequestParam String fechaIni,
             @RequestParam String fechaFin,
             @RequestParam String tipo) 
             throws IOException {
         Map<String,Object> parametros = new HashMap();
-        parametros.put("fechaInicio", fechaInicio);
-        parametros.put("fechaFinal", fechaFin);
+        parametros.put("fechaIni", fechaIni);
+        parametros.put("fechaFin", fechaFin);
         return reporteService.generaReporte("ventasTotales",parametros, tipo);        
     }
     
